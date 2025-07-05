@@ -1,0 +1,42 @@
+body {
+    hyphens: auto;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+}
+
+.header-link {
+   color: inherit;
+}
+
+.container--individual {
+    border: 1px solid #dee2e6;
+    padding: 15px;
+    background: white;
+    box-shadow: 0px 0px 19px -13px rgba(0, 0, 0, 0.75);
+}
+
+.logo {
+    max-width: 40%;
+}
+
+@media (max-width: 767.98px) {
+    .logo {
+        max-width: 75%;
+    }
+}
+
+hr {
+    border-top: 1px solid #dee2e6;
+    opacity: 1;
+}
+
+.card {
+	transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+	transform: translateY(-2px);
+}
