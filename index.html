@@ -28,7 +28,7 @@
 		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 		crossorigin="anonymous"></script>
 
-	<link href="/assets/fontawesome-free-6.6.0-web/css/all.css" rel="stylesheet" />
+	<link href="/assets/fontawesome-free-6.6.0-web/css/all.min.css" rel="stylesheet" />
 
 	<link href="/assets/css/base.css" rel="stylesheet">
 	<link href="/assets/css/index.css" rel="stylesheet">
@@ -36,43 +36,57 @@
 
 <body class="bg-body-tertiary">
 	<header class="container container--individual main-header rounded-top mb-3 mt-3">
-		<div class="row">
-			<div class="col">
-				<a href="/" class="text-decoration-none header-link">
-					<h1>hofmann-thomas.de</h1>
-				</a>
-			</div>
-			<div class="col text-end">
-				<a href="/" class="text-decoration-none header-link">
-					<img src="/assets/images/Hochschule_Darmstadt.png" alt="Logo HDA" class="img-fluid logo">
-				</a>
-			</div>
-		</div>
+		<a href="/" class="text-decoration-none header-link">
+			<h1 class="mb-0">hofmann-thomas.de</h1>
+			<p class="lead text-muted">Webentwicklung & Lehre</p>
+		</a>
 	</header>
-	<main class="mb-3">
+	<main class="mb-3 text-center text-md-start">
 		<div class="container container--individual mb-3">
-			<div class="row">
-				<div class="col-8 col-lg-10 col-md-8">
-					<h2>Willkommen auf meiner Webseite</h2>
-					<p>
-						Mein Name ist Thomas Hofmann. Ich bin Webentwickler mit mehr als zehn Jahren Berufserfahrung.
-						In meiner Funktion als Laboringenieur und Lehrbeauftragter am Fachbereich Informatik der Hochschule
-						Darmstadt bin ich eng in die praxisorientierte Lehre eingebunden.
-					</p>
-					<p>
-						Unter dem folgenden Link finden Sie meine Kontaktdaten.
-					</p>
-					<a target="_blank" class="btn btn-dark" href="https://fbi.h-da.de/personen/thomas-hofmann">
-						<i class="fa-solid fa-up-right-from-square"></i> Kontaktdaten
-					</a>
+			<section class="clearfix mb-4">
+				<img src="/assets/images/Profilbild.jpg" alt="Profilbild" alt="profilbild"
+					class="rounded-circle shadow float-md-end ms-md-4 mb-3 w-50 w-md-auto"
+					style="max-width: 200px; height: auto;">
+
+				<h2>Willkommen</h2>
+				<p>
+					Mein Name ist Thomas Hofmann. Ich bin Webentwickler mit mehr als zehn Jahren Berufserfahrung. Als
+					Laboringenieur und Lehrbeauftragter am Fachbereich Informatik der Hochschule Darmstadt bin ich eng
+					in die praxisorientierte Lehre eingebunden.
+				</p>
+				<p>
+					Unter dem folgenden Link finden Sie meine Kontaktdaten.
+				</p>
+				<a target="_blank" class="btn btn-dark" href="https://fbi.h-da.de/personen/thomas-hofmann">
+					<i class="fa-solid fa-up-right-from-square"></i> Kontaktdaten
+				</a>
+			</section>
+			<hr>
+			<section>
+				<h3>Technologien & Sprachen</h3>
+				<div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-4 fs-3">
+					<div title="HTML5"><i class="fab fa-html5"></i></div>
+					<div title="CSS3"><i class="fab fa-css3-alt"></i></div>
+					<div title="JavaScript"><i class="fab fa-js"></i></div>
+					<div title="PHP"><i class="fab fa-php"></i></div>
+					<div title="Symfony"><i class="fab fa-symfony"></i></div>
+					<div title="Laravel"><i class="fab fa-laravel"></i></div>
+					<div title="TYPO3"><i class="fab fa-typo3"></i></div>
+					<div title="Python"><i class="fab fa-python"></i></div>
+					<div title="Node.js (alt)"><i class="fab fa-node-js"></i></div>
+					<div title="Node.js"><i class="fab fa-node"></i></div>
+					<div title="Bootstrap"><i class="fab fa-bootstrap"></i></div>
+					<div title="React"><i class="fab fa-react"></i></div>
+					<div title="Vue.js"><i class="fab fa-vuejs"></i></div>
+					<div title="Git"><i class="fab fa-git"></i></div>
+					<div title="GitLab"><i class="fab fa-gitlab"></i></div>
+					<div title="Docker"><i class="fab fa-docker"></i></div>
+					<div title="SQL / Datenbanken"><i class="fas fa-database"></i></div>
 				</div>
-				<div class="col-4 col-lg-2 col-md-4">
-					<img src="/assets/images/Profilbild.jpg" alt="profilbild" class="rounded-circle shadow"
-						style="width: 100%; height: auto;">
-				</div>
-			</div>
-			<hr class="mb-2">
-			<h3>Projekte</h3>
+			</section>
+			<hr>
+			<section>
+			<h3>Hobby-Projekte</h3>
 			<div class="row">
 				<div class="col-md-4 mb-3 mb-md-0">
 					<a href="https://quiz.hofmann-thomas.de" target="_blank"
@@ -126,7 +140,8 @@
 						<div class="card h-100">
 							<div class="card-body">
 								<h5 class="card-title">Labor</h5>
-								<p class="card-text">Informationen und Ressourcen rund um das Labor für Multimedia und Computergrafik.</p>
+								<p class="card-text">Informationen und Ressourcen rund um das Labor für Multimedia und
+									Computergrafik.</p>
 							</div>
 						</div>
 					</a>
@@ -143,14 +158,18 @@
 					</a> -->
 				</div>
 			</div>
-			<h4 class="mt-3">Weitere Links</h4>
+			</section>
+			<hr>
+			<section>
+			<h4>Weitere Links</h4>
 			<a href="https://github.com/thomas-hofmann" target="_blank" class="display-6 me-1 text-dark"><i
 					class="fa-brands fa-square-github"></i></a>
 			<a href="https://code.fbi.h-da.de/fbi1518" target="_blank" class="display-6 text-dark"><i
 					class="fa-brands fa-square-gitlab"></i></a>
+			</section>
 		</div>
 	</main>
-	<footer class="container container--individual rounded-bottom main-footer mb-3">
+	<footer class="container container--individual rounded-bottom main-footer mb-3 text-center text-md-start">
 		<small>
 			<i class="fa-regular fa-copyright"></i>
 			<span id="year"></span>
