@@ -10,7 +10,7 @@ async function fetchMediumPosts() {
         container.innerHTML = posts.map(post => `
             <div class="col-lg-4 col-md-6 mb-3 mb-md-0 medium-post">
                 <a href="${post.link}" target="_blank" class="text-decoration-none text-dark d-block h-100">
-                    <div class="card h-100 p-2">
+                    <div class="card h-100 p-2" data-aos="fade-up">
                         <p class="text-muted mb-2">${post.pubDate.slice(0, 10)}</p>
                         <div class="d-flex flex-column justify-content-between" style="height:100%;">
                             <h4>${post.title}</h4>
@@ -22,7 +22,7 @@ async function fetchMediumPosts() {
         `).join('');
 
         // AOS aktualisieren
-        AOS.refresh();
+        AOS.refreshHard();
 
     } catch (err) {
         console.error('Error fetching Medium posts', err);
