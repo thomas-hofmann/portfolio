@@ -8,9 +8,9 @@ async function fetchMediumPosts() {
 
         const container = document.getElementById('medium-posts');
         container.innerHTML = posts.map(post => `
-            <div class="col-lg-4 col-md-6 mb-3 mb-md-0 medium-post">
+            <div class="col-lg-4 col-md-6 mb-3 mb-md-0 medium-post" data-aos="fade-up">
                 <a href="${post.link}" target="_blank" class="text-decoration-none text-dark d-block h-100">
-                    <div class="card h-100 p-2" data-aos="fade-up">
+                    <div class="card h-100 p-2">
                         <p class="text-muted mb-2">${post.pubDate.slice(0, 10)}</p>
                         <div class="d-flex flex-column justify-content-between" style="height:100%;">
                             <h4>${post.title}</h4>
