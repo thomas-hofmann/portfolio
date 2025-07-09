@@ -235,6 +235,10 @@
 				</div>
 			</div>
 		</section>
+		<section class="container container--individual mb-3" data-aos="fade-up">
+			<h3>Neuste Artikel</h3>
+  			<div id="medium-posts" class="row">Loading...</div>
+		</section>
 		<section class="container container--individual mb-3" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
 			<h4>Weitere Links</h4>
 			<div class="d-flex flex-wrap gap-2 justify-content-center justify-content-md-start">
@@ -257,20 +261,15 @@
 			</div>
 		</section>
 	</main>
-	<footer class="container container--individual rounded-bottom main-footer mb-3 text-center text-md-start" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-offset="0">
+	<footer class="container container--individual rounded-bottom main-footer mb-3 text-center text-md-start" data-aos="fade-right" data-aos-anchor-placement="center-bottom">
 		<small>
 			<i class="fa-regular fa-copyright"></i>
 			<span id="year"></span>
 			Thomas Hofmann
 		</small>
 	</footer>
-	<script>
-		document.getElementById("year").textContent = new Date().getFullYear();
-	</script>
-	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-	<script>
-		AOS.init();
-	</script>
 </body>
-
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="/assets/js/logic.js"></script>
+<script src="/assets/js/medium.js"></script>
 </html>
