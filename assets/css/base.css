@@ -36,17 +36,46 @@ hr {
 	transition: all 0.2s ease-in-out;
 }
 
-.card:hover {
-	box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.15);
-	transform: translateY(-2px);
+@media (hover: hover) and (pointer: fine) {
+    .card:hover {
+        box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+    }
 }
 
 .medium-post img {
     width: 100%;
     height: auto;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 #medium-posts {
     min-height: 300px;
+}
+
+@keyframes fadeInRight {
+  0% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+#scroll-icon {
+  opacity: 0.5;
+  animation: fadeInRight 0.5s forwards ease-out;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  #scroll-icon:hover {
+    opacity: 1;
+    transform: translateX(-5px);
+    cursor: pointer;
+  }
+}
+
+#scroll-icon i {
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.2));
 }
