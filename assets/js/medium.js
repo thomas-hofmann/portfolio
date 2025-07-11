@@ -4,7 +4,7 @@ async function fetchMediumPosts() {
     try {
         const res = await fetch(rssToJsonUrl);
         const data = await res.json();
-        const posts = data.items.slice(0, 3); // Last 2 posts
+        const posts = data.items.slice(0, 6); // Last 2 posts
 
         const container = document.getElementById('medium-posts');
         container.innerHTML = posts.map(post => `
@@ -15,11 +15,15 @@ async function fetchMediumPosts() {
                             <small>${post.pubDate.slice(0, 10)}</small>
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </p>
-                        <div class="d-flex flex-column justify-content-between" style="height:100%;">
-                            <h4>${post.title}</h4>
-                            <p>${post.description.split('</p>')[0]}</p>
-                            <p class="text-muted mb-1"><small>Written by Thomas Hofmann</small></p>
-                        </div>
+                        <div class="d-flex flex-column h-100">
+                            <div>
+                                <h4 class="post-title">${post.title}</h4>
+                                <p>${post.description.split('</p>')[0]}</p>
+                            </div>
+                            <p class="text-muted mb-1 mt-auto">
+                                <small>Written by Thomas Hofmann</small>
+                            </p>
+                            </div>
                     </div>
                 </a>
             </div>
