@@ -3,13 +3,14 @@
 
 <head>
 	<title>Thomas Hofmann - Hochschule Darmstadt</title>
+	<!-- default tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
 	<meta name="description"
 		content="Webseite von Thomas Hofmann – Webentwickler, Lehrkraft und Laboringenieur am Fachbereich Informatik der Hochschule Darmstadt.">
 	<meta name="author" content="Thomas Hofmann">
 	<meta name="thumbnail" content="https://hofmann-thomas.de/assets/images/Profilbild.jpg">
-
+	<link rel="canonical" href="https://hofmann-thomas.de" />
 	<!-- Facebook Meta Tags -->
 	<meta property="og:url" content="https://hofmann-thomas.de/">
 	<meta property="og:type" content="website">
@@ -17,7 +18,6 @@
 	<meta property="og:description"
 		content="Webseite von Thomas Hofmann – Webentwickler, Lehrkraft und Laboringenieur am Fachbereich Informatik der Hochschule Darmstadt.">
 	<meta property="og:image" content="https://hofmann-thomas.de/assets/images/Hochschule_Darmstadt.png">
-
 	<!-- Twitter Meta Tags -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta property="twitter:domain" content="hofmann-thomas.de">
@@ -26,47 +26,67 @@
 	<meta name="twitter:description"
 		content="Webseite von Thomas Hofmann – Webentwickler, Lehrkraft und Laboringenieur am Fachbereich Informatik der Hochschule Darmstadt.">
 	<meta name="twitter:image" content="https://hofmann-thomas.de/assets/images/Hochschule_Darmstadt.png">
-
+	<!-- favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon_io/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon_io/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon_io/favicon-16x16.png">
 	<link rel="manifest" href="/assets/favicon_io/site.webmanifest">
-
-	<!-- style -->
-	<link href="/assets/css/index.css?v=1.0.2" rel="stylesheet">
-
+	<!-- css -->
+	<link href="/assets/css/index.css?v=1.0.6" rel="stylesheet">
+	<link href="/assets/css/background.css?v=1.0.3" rel="stylesheet">
 	<!-- Bootstrap -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 		crossorigin="anonymous"></script>
-
 	<!-- Font Awesome -->
 	<link href="/assets/fontawesome-free-6.6.0-web/css/all.min.css" rel="stylesheet" />
-
 	<!-- AOS -->
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<!-- Matomo -->
+	<script>
+	var _paq = window._paq = window._paq || [];
+	/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+	_paq.push(['disableCookies']);
+	_paq.push(['trackPageView']);
+	_paq.push(['enableLinkTracking']);
+	(function() {
+		var u="//analytics.hofmann-thomas.de/";
+		_paq.push(['setTrackerUrl', u+'matomo.php']);
+		_paq.push(['setSiteId', '1']);
+		var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+		g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+	})();
+	</script>
+	<!-- End Matomo Code -->
 </head>
 
 <body class="bg-body-tertiary">
+	<!-- background animation -->
+	<div class="bg"></div>
+	<div class="bg bg2"></div>
+	<div class="bg bg3"></div>
 	<!-- Scroll Icon -->
-	<div id="scroll-icon" class="position-fixed bottom-0 end-0 mb-4 me-4 z-3" style="cursor: pointer;">
+	<div id="scroll-icon" class="position-fixed bottom-0 end-0 mb-3 me-3 z-3" style="cursor: pointer;">
 		<i class="fa-regular fa-circle-down fa-3x"></i>
 	</div>
+	<!-- header -->
 	<header class="container container--individual main-header rounded-top mb-3 mt-3 text-center text-md-start"
-		data-aos="fade-left">
+		data-aos="fade-down">
 		<a href="/" class="text-decoration-none header-link d-block">
 			<h1 class="mb-0">hofmann-thomas.de</h1>
-			<p class="lead text-muted mb-0">Webentwicklung & Lehre</p>
+			<p class="lead text-muted mb-0" style="overflow-x: hidden;" data-aos="fade-left" data-aos-delay="500"
+				data-aos-duration="800">Webentwicklung & Lehre</p>
 		</a>
 	</header>
 	<main class="mb-3 text-center text-md-start">
+		<!-- about me -->
 		<section class="container container--individual mb-3" data-aos="zoom-in">
 			<div class="clearfix">
-				<img src="/assets/images/Profilbild.jpg" alt="Profilbild"
+				<img src="/assets/images/Profilbild.jpg" alt="Profilbild von Thomas Hofmann"
 					class="rounded-circle profile-image shadow float-md-end ms-md-4 mb-md-0 mb-3 w-50 w-md-auto"
-					style="max-width: 200px; height: auto;">
+					style="max-width: 200px; height: auto;" loading="eager" width="200" height="200">
 				<h2>Über mich</h2>
 				<p>
 					Mein Name ist Thomas Hofmann. Ich bin <strong>Webentwickler</strong> mit mehr als zehn Jahren
@@ -75,7 +95,7 @@
 					der Hochschule Darmstadt bin ich außerdem eng in die praxisorientierte Lehre eingebunden.
 				</p>
 				<p>
-					Auf dieser Seite erhalten Sie einen Einblick in meine Hobby-Projekte, veröffentlichte
+					Auf dieser Seite erhalten Sie einen Einblick in meine Projekte, veröffentlichte
 					Artikel, Entwicklerarbeit und vieles mehr.
 				</p>
 				<p>
@@ -86,29 +106,42 @@
 				</a>
 			</div>
 		</section>
-		<section class="container container--individual mb-3" data-aos="fade-right">
+		<!-- technology -->
+		<section id="technology-anchor"></section>
+		<section class="container container--individual mb-3" data-aos="fade-up">
 			<h3>Technologien & Sprachen</h3>
-			<div class="d-flex flex-wrap justify-content-center justify-content-md-start column-gap-4 row-gap-1 fs-3">
-				<div title="HTML5" data-aos="zoom-in" data-aos-delay="0"><i class="fab fa-html5"></i></div>
-				<div title="CSS3" data-aos="zoom-in" data-aos-delay="50"><i class="fab fa-css3-alt"></i></div>
-				<div title="JavaScript" data-aos="zoom-in" data-aos-delay="100"><i class="fab fa-js"></i></div>
-				<div title="PHP" data-aos="zoom-in" data-aos-delay="150"><i class="fab fa-php"></i></div>
-				<div title="Symfony" data-aos="zoom-in" data-aos-delay="200"><i class="fab fa-symfony"></i></div>
-				<div title="Laravel" data-aos="zoom-in" data-aos-delay="250"><i class="fab fa-laravel"></i></div>
-				<div title="TYPO3" data-aos="zoom-in" data-aos-delay="300"><i class="fab fa-typo3"></i></div>
-				<div title="Node.js" data-aos="zoom-in" data-aos-delay="350"><i class="fab fa-node"></i></div>
-				<div title="Bootstrap" data-aos="zoom-in" data-aos-delay="400"><i class="fab fa-bootstrap"></i></div>
-				<div title="TailwindCSS" data-aos="zoom-in" data-aos-delay="450">
-					<?xml version="1.0" encoding="utf-8"?>
+			<div class="d-flex flex-wrap justify-content-center justify-content-md-start column-gap-3 row-gap-1 fs-3">
+				<div data-bs-toggle="tooltip" data-bs-placement="top" title="HTML5" data-aos="zoom-in"
+					data-aos-delay="0"><i class="fab fa-html5"></i></div>
+				<div data-bs-toggle="tooltip" data-bs-placement="top" title="CSS3" data-aos="zoom-in"
+					data-aos-delay="50"><i class="fab fa-css3-alt"></i></div>
+				<div data-bs-toggle="tooltip" data-bs-placement="top" title="JavaScript" data-aos="zoom-in"
+					data-aos-delay="100"><i class="fab fa-js"></i></div>
+				<div data-bs-toggle="tooltip" data-bs-placement="top" title="PHP" data-aos="zoom-in"
+					data-aos-delay="150"><i class="fab fa-php"></i></div>
+				<div data-bs-toggle="tooltip" data-bs-placement="top" title="Symfony" data-aos="zoom-in"
+					data-aos-delay="200"><i class="fab fa-symfony"></i></div>
+				<div data-bs-toggle="tooltip" data-bs-placement="top" title="Laravel" data-aos="zoom-in"
+					data-aos-delay="250"><i class="fab fa-laravel"></i></div>
+				<div data-bs-toggle="tooltip" data-bs-placement="top" title="TYPO3" data-aos="zoom-in"
+					data-aos-delay="300"><i class="fab fa-typo3"></i></div>
+				<div data-bs-toggle="tooltip" data-bs-placement="top" title="Node.js" data-aos="zoom-in"
+					data-aos-delay="350"><i class="fab fa-node"></i></div>
+				<div data-bs-toggle="tooltip" data-bs-placement="top" title="Bootstrap" data-aos="zoom-in"
+					data-aos-delay="400"><i class="fab fa-bootstrap"></i></div>
+				<div data-bs-toggle="tooltip" data-bs-placement="top" title="TailwindCSS" data-aos="zoom-in"
+					data-aos-delay="450">
 					<svg width="30px" height="30px" fill="#000000" width="800px" height="800px" viewBox="0 0 24 24"
 						role="img" xmlns="http://www.w3.org/2000/svg">
-						<title>Tailwind CSS icon</title>
+						<title>Tailwind CSS</title>
 						<path
 							d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z" />
 					</svg>
 				</div>
-				<div title="SASS" data-aos="zoom-in" data-aos-delay="500"><i class="fa-brands fa-sass"></i></div>
-				<div title="jQuery" data-aos="zoom-in" data-aos-delay="550">
+				<div data-bs-toggle="tooltip" data-bs-placement="top" title="SASS" data-aos="zoom-in"
+					data-aos-delay="500"><i class="fa-brands fa-sass"></i></div>
+				<div data-bs-toggle="tooltip" data-bs-placement="top" title="jQuery" data-aos="zoom-in"
+					data-aos-delay="550">
 					<svg width="40px" height="40px" viewBox="0 -198 512 512" version="1.1"
 						xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000">
 						<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -154,126 +187,239 @@
 						</g>
 					</svg>
 				</div>
-				<div title="Angular" data-aos="zoom-in" data-aos-delay="600"><i class="fa-brands fa-angular"></i></div>
-				<div title="React" data-aos="zoom-in" data-aos-delay="650"><i class="fab fa-react"></i></div>
-				<div title="Next.js" data-aos="zoom-in" data-aos-delay="700">
+				<div data-bs-toggle="tooltip" data-bs-placement="top" title="Angular" data-aos="zoom-in"
+					data-aos-delay="600"><i class="fa-brands fa-angular"></i></div>
+				<div data-bs-toggle="tooltip" data-bs-placement="top" title="React" data-aos="zoom-in"
+					data-aos-delay="650"><i class="fab fa-react"></i></div>
+				<div data-bs-toggle="tooltip" data-bs-placement="top" title="Next.js" data-aos="zoom-in"
+					data-aos-delay="700">
 					<svg fill="#000000" style="margin-bottom:5px" width="26px" height="26px" viewBox="0 0 24 24"
 						role="img" xmlns="http://www.w3.org/2000/svg">
 						<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
 						<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
 						<g id="SVGRepo_iconCarrier">
-							<title>Next.js icon</title>
 							<path
 								d="M17.813 22.502c-.089.047-.084.066.005.021a.228.228 0 0 0 .07-.047c0-.016-.002-.014-.075.026zm.178-.094c-.042.033-.042.035.009.009.028-.014.052-.03.052-.035 0-.019-.012-.014-.061.026zm.117-.071c-.042.033-.042.035.009.009.028-.014.052-.03.052-.035 0-.019-.012-.014-.061.026zm.117-.07c-.042.033-.042.035.009.009.028-.014.052-.03.052-.035 0-.019-.012-.014-.061.026zm.162-.105c-.082.052-.108.087-.035.047.052-.03.136-.094.122-.096a.466.466 0 0 0-.087.049zM11.214.006c-.052.005-.216.021-.364.033-3.408.307-6.601 2.146-8.623 4.973a11.876 11.876 0 0 0-2.118 5.243c-.096.659-.108.854-.108 1.748s.012 1.088.108 1.748c.652 4.506 3.859 8.292 8.208 9.695.779.251 1.6.422 2.533.525.364.04 1.935.04 2.299 0 1.611-.178 2.977-.577 4.323-1.264.206-.106.246-.134.218-.157a231.73 231.73 0 0 1-1.954-2.62l-1.919-2.592-2.404-3.558a332.01 332.01 0 0 0-2.421-3.556c-.009-.002-.019 1.579-.023 3.509-.007 3.38-.009 3.516-.052 3.596a.424.424 0 0 1-.206.213c-.075.038-.141.045-.495.045H7.81l-.108-.068a.442.442 0 0 1-.157-.171l-.049-.106.005-4.703.007-4.705.073-.091a.637.637 0 0 1 .174-.143c.096-.047.134-.052.54-.052.479 0 .558.019.683.155a466.83 466.83 0 0 1 2.895 4.361c1.558 2.362 3.687 5.587 4.734 7.171l1.9 2.878.096-.063a12.34 12.34 0 0 0 2.465-2.163 11.94 11.94 0 0 0 2.824-6.134c.096-.659.108-.854.108-1.748s-.012-1.088-.108-1.748c-.652-4.506-3.859-8.292-8.208-9.695a12.552 12.552 0 0 0-2.498-.523c-.225-.023-1.776-.049-1.97-.03zm4.912 7.258a.471.471 0 0 1 .237.277c.019.061.023 1.365.019 4.304l-.007 4.218-.744-1.14-.746-1.14v-3.066c0-1.982.009-3.096.023-3.15a.484.484 0 0 1 .232-.296c.096-.049.131-.054.5-.054.347 0 .408.005.486.047z">
 							</path>
 						</g>
 					</svg>
 				</div>
-				<div title="Vue.js" data-aos="zoom-in" data-aos-delay="750"><i class="fab fa-vuejs"></i></div>
-				<div title="Git" data-aos="zoom-in" data-aos-delay="800"><i class="fab fa-git"></i></div>
-				<div title="GitLab" data-aos="zoom-in" data-aos-delay="850"><i class="fab fa-gitlab"></i></div>
-				<div title="Docker" data-aos="zoom-in" data-aos-delay="900"><i class="fab fa-docker"></i></div>
-				<div title="SQL / Datenbanken" data-aos="zoom-in" data-aos-delay="950"><i class="fas fa-database"></i>
+				<div data-bs-toggle="tooltip" data-bs-placement="top" title="Vue.js" data-aos="zoom-in"
+					data-aos-delay="750">
+					<i class="fab fa-vuejs"></i>
 				</div>
-
-				<div title="Windows" data-aos="zoom-in" data-aos-delay="1000"><i class="fa-brands fa-windows"></i></div>
-				<div title="Linux" data-aos="zoom-in" data-aos-delay="1050"><i class="fa-brands fa-linux"></i></div>
-				<div title="MacOS" data-aos="zoom-in" data-aos-delay="1100"><i class="fa-brands fa-apple"></i></div>
+				<div data-bs-toggle="tooltip" data-bs-placement="top" title="Flutter" data-aos="zoom-in"
+					data-aos-delay="800">
+					<i class="fa-brands fa-flutter"></i>
+				</div>
+				<div data-bs-toggle="tooltip" data-bs-placement="top" title="Figma" data-aos="zoom-in"
+					data-aos-delay="850">
+					<i class="fa-brands fa-figma"></i>
+				</div>
+				<div data-bs-toggle="tooltip" data-bs-placement="top" title="Git" data-aos="zoom-in"
+					data-aos-delay="900">
+					<i class="fab fa-git"></i>
+				</div>
+				<div data-bs-toggle="tooltip" data-bs-placement="top" title="GitLab" data-aos="zoom-in"
+					data-aos-delay="950">
+					<i class="fab fa-gitlab"></i>
+				</div>
+				<div data-bs-toggle="tooltip" data-bs-placement="top" title="Docker" data-aos="zoom-in"
+					data-aos-delay="1000">
+					<i class="fab fa-docker"></i>
+				</div>
+				<div data-bs-toggle="tooltip" data-bs-placement="top" title="SQL / Datenbanken" data-aos="zoom-in"
+					data-aos-delay="1050">
+					<i class="fas fa-database"></i>
+				</div>
+				<div data-bs-toggle="tooltip" data-bs-placement="top" title="Trello" data-aos="zoom-in"
+					data-aos-delay="1100">
+					<i class="fa-brands fa-trello"></i>
+				</div>
+				<div data-bs-toggle="tooltip" data-bs-placement="top" title="Slack" data-aos="zoom-in"
+					data-aos-delay="1150">
+					<i class="fa-brands fa-slack"></i>
+				</div>
+				<div data-bs-toggle="tooltip" data-bs-placement="top" title="Windows" data-aos="zoom-in"
+					data-aos-delay="1200">
+					<i class="fa-brands fa-windows"></i>
+				</div>
+				<div data-bs-toggle="tooltip" data-bs-placement="top" title="Linux" data-aos="zoom-in"
+					data-aos-delay="1250">
+					<i class="fa-brands fa-linux"></i>
+				</div>
+				<div data-bs-toggle="tooltip" data-bs-placement="top" title="MacOS" data-aos="zoom-in"
+					data-aos-delay="1300">
+					<i class="fa-brands fa-apple"></i>
+				</div>
 			</div>
 		</section>
-		<section class="container container--individual mb-3" data-aos="fade-up">
-			<h3>Hobby-Projekte</h3>
-			<div class="row">
-				<div class="col-md-4 mb-3 mb-md-0" data-aos="fade-up">
+		<!-- projects -->
+		<section class="container container--individual mb-3" data-aos="fade-up" id="projects-anchor">
+			<h3>Persönliche Projekte</h3>
+			<p class="text-muted">Viele meiner Kundenprojekte sind nicht öffentlich einsehbar – hier zeige ich
+				stattdessen einige freie Arbeiten und eigene Ideen.</p>
+			<div class="row g-3">
+				<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
 					<a href="https://quiz.hofmann-thomas.de" target="_blank"
 						class="text-decoration-none text-dark d-block h-100">
 						<div class="card h-100">
-							<div class="card-body">
-								<h5 class="card-title">Quiz</h5>
-								<p class="card-text">Interaktives Quiz zum Selbsttest oder für den Unterricht.</p>
+							<div class="card-body d-flex flex-column justify-content-between">
+								<div>
+									<h5 class="card-title">Quiz</h5>
+									<p class="card-text">Interaktives Quiz zum Selbsttest oder für den Unterricht.</p>
+								</div>
+								<small class="d-flex flex-wrap justify-content-center justify-content-md-start">
+									<span class="badge text-bg-dark mt-2 me-2" data-aos="zoom-in" data-aos-delay="200"
+										data-aos-anchor-placement="bottom-bottom">Symfony</span>
+									<span class="badge text-bg-dark mt-2 me-2" data-aos="zoom-in" data-aos-delay="200"
+										data-aos-anchor-placement="bottom-bottom">Bootstrap</span>
+									<span class="badge text-bg-dark mt-2 me-2" data-aos="zoom-in" data-aos-delay="200"
+										data-aos-anchor-placement="bottom-bottom">Sass</span>
+									<span class="badge text-bg-dark mt-2 me-2" data-aos="zoom-in" data-aos-delay="200"
+										data-aos-anchor-placement="bottom-bottom">Twig</span>
+								</small>
 							</div>
 						</div>
 					</a>
 				</div>
-				<div class="col-md-4 mb-3 mb-md-0" data-aos="fade-up">
+				<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
 					<a href="https://timer.hofmann-thomas.de" target="_blank"
 						class="text-decoration-none text-dark d-block h-100">
 						<div class="card h-100">
-							<div class="card-body">
-								<h5 class="card-title">Timer</h5>
-								<p class="card-text">Countdown-Timer zur Prüfungsüberwachung oder Präsentation.</p>
+							<div class="card-body d-flex flex-column justify-content-between">
+								<div>
+									<h5 class="card-title">Timer</h5>
+									<p class="card-text">Countdown-Timer zur Prüfungsüberwachung oder Präsentation.</p>
+								</div>
+								<small class="d-flex flex-wrap justify-content-center justify-content-md-start">
+									<span class="badge text-bg-dark mt-2 me-2" data-aos="zoom-in" data-aos-delay="200"
+										data-aos-anchor-placement="bottom-bottom">HTML</span>
+									<span class="badge text-bg-dark mt-2 me-2" data-aos="zoom-in" data-aos-delay="200"
+										data-aos-anchor-placement="bottom-bottom">CSS</span>
+									<span class="badge text-bg-dark mt-2 me-2" data-aos="zoom-in" data-aos-delay="200"
+										data-aos-anchor-placement="bottom-bottom">JS</span>
+									<span class="badge text-bg-dark mt-2 me-2" data-aos="zoom-in" data-aos-delay="200"
+										data-aos-anchor-placement="bottom-bottom">Bootstrap</span>
+								</small>
 							</div>
 						</div>
 					</a>
 				</div>
-				<div class="col-md-4" data-aos="fade-up">
+				<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
 					<a href="https://api.hofmann-thomas.de" target="_blank"
 						class="text-decoration-none text-dark d-block h-100">
 						<div class="card h-100">
-							<div class="card-body">
-								<h5 class="card-title">API</h5>
-								<p class="card-text">Test-API zur Integration von Backend-Diensten.</p>
+							<div class="card-body d-flex flex-column justify-content-between">
+								<div>
+									<h5 class="card-title">API</h5>
+									<p class="card-text">Test-API zur Integration von Backend-Diensten.</p>
+								</div>
+
+								<small class="d-flex flex-wrap justify-content-center justify-content-md-start">
+									<span class="badge text-bg-dark mt-2 me-2" data-aos="zoom-in" data-aos-delay="200"
+										data-aos-anchor-placement="bottom-bottom">Laravel</span>
+									<span class="badge text-bg-dark mt-2 me-2" data-aos="zoom-in" data-aos-delay="200"
+										data-aos-anchor-placement="bottom-bottom">Tailwind</span>
+									<span class="badge text-bg-dark mt-2 me-2" data-aos="zoom-in" data-aos-delay="200"
+										data-aos-anchor-placement="bottom-bottom">Blade</span>
+								</small>
 							</div>
 						</div>
 					</a>
 				</div>
-			</div>
-			<div class="row mt-3">
-				<div class="col-md-4 mb-3 mb-md-0" data-aos="fade-up">
+				<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
 					<a href="https://multimedia-grafik.h-da.io/" target="_blank"
 						class="text-decoration-none text-dark d-block h-100">
 						<div class="card h-100">
-							<div class="card-body">
-								<h5 class="card-title">Fachgruppe</h5>
-								<p class="card-text">Seite der Fachgruppe für Multimedia und Computergrafik.</p>
+							<div class="card-body d-flex flex-column justify-content-between">
+								<div>
+									<h5 class="card-title">Fachgruppe</h5>
+									<p class="card-text">Seite der Fachgruppe für Multimedia und Computergrafik.</p>
+								</div>
+								<small class="d-flex flex-wrap justify-content-center justify-content-md-start">
+									<span class="badge text-bg-dark mt-2 me-2" data-aos="zoom-in" data-aos-delay="200"
+										data-aos-anchor-placement="bottom-bottom">Next.js</span>
+									<span class="badge text-bg-dark mt-2 me-2" data-aos="zoom-in" data-aos-delay="200"
+										data-aos-anchor-placement="bottom-bottom">React</span>
+									<span class="badge text-bg-dark mt-2 me-2" data-aos="zoom-in" data-aos-delay="200"
+										data-aos-anchor-placement="bottom-bottom">Tailwind</span>
+								</small>
 							</div>
 						</div>
 					</a>
 				</div>
-				<div class="col-md-4 mb-3 mb-md-0" data-aos="fade-up">
+				<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
 					<a href="https://graphics-lab.h-da.io/" target="_blank"
 						class="text-decoration-none text-dark d-block h-100">
 						<div class="card h-100">
-							<div class="card-body">
-								<h5 class="card-title">Labor</h5>
-								<p class="card-text">Informationen und Ressourcen rund um das Labor für Multimedia
-									und
-									Computergrafik.</p>
+							<div class="card-body d-flex flex-column justify-content-between">
+								<div>
+									<h5 class="card-title">Labor</h5>
+									<p class="card-text">Informationen und Ressourcen rund um das Labor für Multimedia
+										und
+										Computergrafik.</p>
+								</div>
+								<small class="d-flex flex-wrap justify-content-center justify-content-md-start">
+									<span class="badge text-bg-dark mt-2 me-2" data-aos="zoom-in" data-aos-delay="200"
+										data-aos-anchor-placement="bottom-bottom">Astro</span>
+									<span class="badge text-bg-dark mt-2 me-2" data-aos="zoom-in" data-aos-delay="200"
+										data-aos-anchor-placement="bottom-bottom">React</span>
+								</small>
 							</div>
 						</div>
 					</a>
 				</div>
-				<div class="col-md-4" data-aos="fade-up">
-					<a href="https://pizza.hofmann-thomas.de/" target="_blank"
+				<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+					<a href="https://dashboard.hofmann-thomas.de/" target="_blank"
 						class="text-decoration-none text-dark d-block h-100">
 						<div class="card h-100">
-							<div class="card-body">
-								<h5 class="card-title">Pizzaservice</h5>
-								<p class="card-text">Für die Übungen vom Modul "Entwicklung webbasierter Anwendungen".
-								</p>
+							<div class="card-body d-flex flex-column justify-content-between">
+								<div>
+									<h5 class="card-title">Dashboard</h5>
+									<p class="card-text">Zum Verfolgen verschiedener Statistiken.
+									</p>
+								</div>
+								<small class="d-flex flex-wrap justify-content-center justify-content-md-start">
+									<span class="badge text-bg-dark mt-2 me-2" data-aos="zoom-in" data-aos-delay="200"
+										data-aos-anchor-placement="bottom-bottom">Laravel</span>
+									<span class="badge text-bg-dark mt-2 me-2" data-aos="zoom-in" data-aos-delay="200"
+										data-aos-anchor-placement="bottom-bottom">React</span>
+									<span class="badge text-bg-dark mt-2 me-2" data-aos="zoom-in" data-aos-delay="200"
+										data-aos-anchor-placement="bottom-bottom">Tailwind</span>
+									<span class="badge text-bg-dark mt-2 me-2" data-aos="zoom-in" data-aos-delay="200"
+										data-aos-anchor-placement="bottom-bottom">Shadcn</span>
+								</small>
 							</div>
 						</div>
 					</a>
 				</div>
 			</div>
 		</section>
+		<!-- articles -->
+		<section id="articles-anchor"></section>
 		<section class="container container--individual mb-3" data-aos="fade-up">
 			<h3>Neuste Artikel</h3>
-			<p class="text-muted">Veröffentlicht auf Medium.com</p>
-			<div id="medium-posts" class="row">Loading...</div>
+			<p class="text-muted">Ich schreibe gelegentlich über Webentwicklung, Design und digitale Tools. Die Artikel
+				erscheinen auf <a target="_blank" class="text-decoration-none medium-link"
+					href="https://medium.com">Medium.com.</a></p>
+			<div id="medium-posts" class="row g-3"></div>
 			<a href="https://medium.com/@thomas-hofmann" target="_blank"
-				class="btn btn-dark btn-sm position-relative me-3" title="Medium" data-aos="zoom-in" data-aos-delay="0"
-				data-aos-anchor-placement="bottom-bottom">
+				class="btn btn-dark btn-sm position-relative me-3 mt-3" title="Medium" data-aos="zoom-in"
+				data-aos-delay="0" data-aos-anchor-placement="bottom-bottom">
 				<i class="fa-solid fa-up-right-from-square"></i> Alle Artikel
-				<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-light text-body border border-black" id="medium-counter">0</span>
+				<span
+					class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-light text-body border border-black"
+					id="medium-counter">0</span>
 			</a>
-			<button id="random-article-btn" class="btn btn-dark btn-sm position-relative" title="Medium"
+			<button id="random-article-btn" class="btn btn-dark btn-sm position-relative mt-3" title="Medium"
 				data-aos="zoom-in" data-aos-delay="0" data-aos-anchor-placement="bottom-bottom">
 				<i class="fa-solid fa-dice"></i> Zufälliger Artikel
 			</button>
 		</section>
+		<!-- more links -->
 		<section class="container container--individual mb-3" data-aos="fade-up"
-			data-aos-anchor-placement="center-bottom">
+			data-aos-anchor-placement="center-bottom" id="links-anchor">
 			<h4>Weitere Links</h4>
 			<div class="d-flex flex-wrap gap-2 justify-content-center justify-content-md-start">
 				<a href="https://github.com/thomas-hofmann" target="_blank"
@@ -299,23 +445,20 @@
 			</div>
 		</section>
 	</main>
-	<footer class="container container--individual rounded-bottom main-footer mb-3 text-center text-md-start d-flex flex-column flex-md-row justify-content-between align-items-center gap-2"
-        data-aos="fade-right" data-aos-anchor-placement="center-bottom">
-    
-    <small>
-        <i class="fa-regular fa-copyright"></i>
-        <span id="year"></span>
-        Thomas Hofmann
-    </small>
-    
-    <span class="badge text-muted border d-inline-flex align-items-center gap-1">
-        <i class="fa-solid fa-users"></i>
-        <span id="visitor-count">...</span>
-    </span>
-</footer>
+	<!-- footer -->
+	<footer
+		class="container container--individual rounded-bottom main-footer mb-3 text-center text-md-start d-flex flex-column flex-md-row justify-content-between align-items-center gap-2"
+		data-aos="fade-right" data-aos-anchor-placement="center-bottom">
+		<small>
+			<i class="fa-regular fa-copyright"></i>
+			<span id="year"></span>
+			Thomas Hofmann
+		</small>
+	</footer>
 </body>
+<!-- javascript -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="/assets/js/logic.js?v=1.0.6"></script>
-<script src="/assets/js/medium.js?v=1.1.1"></script>
+<script defer src="/assets/js/logic.js?v=1.1.0"></script>
+<script defer src="/assets/js/medium.js?v=1.1.7"></script>
 
 </html>

@@ -1,5 +1,36 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     hyphens: auto;
+}
+
+header {
+  overflow-x: hidden;
+}
+
+header h1 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+header h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(to right, rgb(206, 212, 218), rgb(240, 242, 245));
+  animation: underlineGrow 2s forwards;
+}
+
+@keyframes underlineGrow {
+  to {
+    width: 100%;
+  }
 }
 
 h1 {
@@ -20,6 +51,10 @@ a i {
 }
 
 a:hover i {
+    transform: scale(0.9);
+}
+
+button:hover i {
     transform: scale(0.9);
 }
 
@@ -80,6 +115,15 @@ a:hover i {
   }
 }
 
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
 #scroll-icon {
   opacity: 0.5;
   animation: fadeInRight 0.5s forwards ease-out;
@@ -89,20 +133,27 @@ a:hover i {
 @media (hover: hover) and (pointer: fine) {
   #scroll-icon:hover {
     opacity: 1;
-    transform: translateX(-5px);
     cursor: pointer;
   }
 }
 
 #scroll-icon i {
-  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.2));
+  animation: floatUpDown 1.5s ease-in-out infinite;
 }
 
 @media (min-width: 768px) {
   .post-title {
-    min-height: 2lh;
+    min-height: 3lh;
   }
   .contact-button {
     width: 100%;
   }
+}
+
+.medium-link {
+  color: inherit;
+}
+
+.medium-link:hover {
+  opacity: 0.8;
 }

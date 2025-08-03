@@ -1,9 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("year").textContent = new Date().getFullYear();
-     fetch('/backend/article-counter.php')
+
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    tooltipTriggerList.forEach(el => new bootstrap.Tooltip(el));
+    
+    fetch('/backend/article-counter.php')
         .catch(err => {
-            // Optional: Fehlerbehandlung (z. B. Logging)
-            console.warn('Fehler beim Aufruf von update-article-counter.php:', err);
+            console.warn('Fehler beim Aufruf von article-counter.php:', err);
         });
 
     fetch('/backend/data.json')
@@ -24,50 +27,59 @@ document.addEventListener("DOMContentLoaded", function () {
     const scrollIcon = document.getElementById("scroll-icon");
     const icon = scrollIcon.querySelector("i");
 
-    function scrollToBottom() {
-        window.scrollTo({
-        top: document.body.scrollHeight,
-        behavior: "smooth"
-        });
-    }
+    // Alle Abschnitts-IDs ermitteln (z. B. section[id])
+    const sections = Array.from(document.querySelectorAll("section[id]"));
+    const sectionOffsets = sections.map(section => section.offsetTop);
 
     function scrollToTop() {
         window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+            top: 0,
+            behavior: "smooth"
         });
     }
 
+    function scrollToSection(index) {
+        if (sections[index]) {
+            sections[index].scrollIntoView({ behavior: "smooth" });
+        }
+    }
+
+    function getNextSectionIndex() {
+        const scrollPos = window.scrollY + 10; // kleine Toleranz
+        for (let i = 0; i < sectionOffsets.length; i++) {
+            if (scrollPos < sectionOffsets[i] - 10) {
+                return i;
+            }
+        }
+        return -1; // Kein nächster Abschnitt mehr
+    }
+
     scrollIcon.addEventListener("click", () => {
-        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 10) {
-        // already at bottom → scroll up
-        scrollToTop();
+        const atBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 10;
+
+        if (atBottom) {
+            // Ganz unten: nach ganz oben
+            scrollToTop();
         } else {
-        // not at bottom → scroll down
-        scrollToBottom();
+            // Sonst: zum nächsten Abschnitt scrollen
+            const nextIndex = getNextSectionIndex();
+            if (nextIndex !== -1) {
+                scrollToSection(nextIndex);
+            } else {
+                // Fallback: ganz nach unten
+                window.scrollTo({
+                    top: document.body.scrollHeight,
+                    behavior: "smooth"
+                });
+            }
         }
     });
 
-    // Wechsel Icon je nach Scroll-Position
+    // Icon wechseln je nach Scrollposition
     window.addEventListener("scroll", () => {
         const atBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 10;
         icon.classList.toggle("fa-circle-down", !atBottom);
         icon.classList.toggle("fa-circle-up", atBottom);
     });
-
-    if (!sessionStorage.getItem("counted")) {
-        fetch('backend/counter.php')
-        .then(res => res.json())
-        .then(data => {
-            document.getElementById('visitor-count').textContent = data.total;
-            sessionStorage.setItem("counted", "true");
-        });
-    } else {
-        fetch('backend/counter.txt')
-        .then(res => res.text())
-        .then(count => {
-            document.getElementById('visitor-count').textContent = count;
-        });
-    }
 });
 
