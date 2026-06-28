@@ -100,12 +100,26 @@ button:hover i {
   transition: opacity 150ms ease-in-out;
 }
 
-.projects-accordion .accordion-button::after {
+.projects-accordion .accordion-button::before {
+  flex-shrink: 0;
   width: 0.75rem;
   height: 0.75rem;
-  margin-left: 0.5rem;
+  margin-right: 0.35rem;
+  content: "";
+  background-image: var(--bs-accordion-btn-icon);
+  background-repeat: no-repeat;
   background-size: 0.75rem;
   filter: brightness(0) invert(1);
+  transition: var(--bs-accordion-btn-icon-transition);
+}
+
+.projects-accordion .accordion-button:not(.collapsed)::before {
+  background-image: var(--bs-accordion-btn-active-icon);
+  transform: var(--bs-accordion-btn-icon-transform);
+}
+
+.projects-accordion .accordion-button::after {
+  display: none;
 }
 
 .projects-accordion .accordion-button:hover {
