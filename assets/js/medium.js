@@ -3,7 +3,7 @@ let posts = []; // außerhalb speichern, damit global zugänglich
 async function fetchMediumPosts() {
     const API_KEY = 'w547tgiprgmypbdzz6hs41geopwtolhntn0zvngw';
     const MEDIUM_FEED = 'https://medium.com/feed/@thomas-hofmann';
-    const rssToJsonUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(MEDIUM_FEED)}&api_key=${API_KEY}`;
+    const rssToJsonUrl = 'medium.php';
     const container = document.getElementById('medium-posts');
 
     try {
@@ -55,7 +55,7 @@ async function fetchMediumPosts() {
                     <a href="${post.link}" target="_blank" class="text-decoration-none text-dark d-block h-100">
                         <div class="card h-100 p-2">
                             <p class="text-muted mb-2 d-flex justify-content-between align-items-center">
-                                <small>${new Date(post.pubDate).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric'})}</small>
+                                <small>medium.com</small>
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             </p>
                             <div class="d-flex flex-column h-100">
