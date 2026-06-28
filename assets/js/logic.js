@@ -89,4 +89,10 @@ document.addEventListener("DOMContentLoaded", function () {
         icon.classList.toggle("fa-circle-down", !atBottom);
         icon.classList.toggle("fa-circle-up", atBottom);
     });
+
+    const moreProjects = document.getElementById("moreProjects");
+    if (moreProjects && window.AOS) {
+        moreProjects.addEventListener("shown.bs.collapse", () => AOS.refreshHard());
+        moreProjects.addEventListener("hidden.bs.collapse", () => AOS.refreshHard());
+    }
 });
