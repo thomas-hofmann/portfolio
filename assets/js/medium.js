@@ -1,13 +1,40 @@
 let posts = []; // außerhalb speichern, damit global zugänglich
+let aosInitialized = false;
+
+function initAOS() {
+    if (!window.AOS) {
+        return;
+    }
+
+    if (aosInitialized) {
+        AOS.refresh();
+        return;
+    }
+
+    AOS.init({
+        once: true
+    });
+    aosInitialized = true;
+}
 
 async function fetchMediumPosts() {
-    const API_KEY = 'w547tgiprgmypbdzz6hs41geopwtolhntn0zvngw';
-    const MEDIUM_FEED = 'https://medium.com/feed/@thomas-hofmann';
-    const rssToJsonUrl = 'medium.php';
+    // Aktuell bewusst statisch: keine externen RSS/API-Aufrufe beim Seitenaufruf.
+    const mediumPostsUrl = 'medium-static.json';
+
+    // Alter dynamischer Weg über medium.php:
+    // medium.php ruft https://api.rss2json.com mit dem Medium-RSS-Feed ab,
+    // cached das Ergebnis in medium.json und liefert dieselbe JSON-Struktur.
+    //
+    // Ja ich weiß KEY sichtbar im Frontend, hier aber egal. Also nicht aufregen ;)
+    // const API_KEY = 'w547tgiprgmypbdzz6hs41geopwtolhntn0zvngw';
+    // const MEDIUM_FEED = 'https://medium.com/feed/@thomas-hofmann';
+    // const rssToJsonUrl = 'medium.php';
+    // const mediumPostsUrl = rssToJsonUrl;
+
     const container = document.getElementById('medium-posts');
 
     try {
-        const res = await fetch(rssToJsonUrl);
+        const res = await fetch(mediumPostsUrl);
 
         if (!res.ok) {
             throw new Error(`HTTP error! status: ${res.status}`);
@@ -87,13 +114,13 @@ async function fetchMediumPosts() {
         const images = container.querySelectorAll('img');
         let loadedImages = 0;
         if (images.length === 0) {
-            AOS.init();
+            initAOS();
         } else {
             images.forEach(img => {
                 img.onload = img.onerror = () => {
                     loadedImages++;
                     if (loadedImages === images.length) {
-                        AOS.init();
+                        initAOS();
                     }
                 };
             });
@@ -118,7 +145,7 @@ function triggerResize() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    AOS.init();
+    initAOS();
     fetchMediumPosts();
     triggerResize();
 

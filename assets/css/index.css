@@ -82,6 +82,47 @@ button:hover i {
 	transition: all 0.2s ease-in-out;
 }
 
+.projects-accordion .accordion-item {
+  border: 0;
+}
+
+.projects-accordion .accordion-button {
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #fff;
+  background-color: #212529;
+  border-radius: var(--bs-border-radius-sm);
+  box-shadow: none;
+  transition: opacity 150ms ease-in-out;
+}
+
+.projects-accordion .accordion-button::after {
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-left: 0.5rem;
+  background-size: 0.75rem;
+  filter: brightness(0) invert(1);
+}
+
+.projects-accordion .accordion-button:hover {
+  opacity: 0.75;
+}
+
+.projects-accordion .accordion-button:not(.collapsed),
+.projects-accordion .accordion-button:focus {
+  color: #fff;
+  background-color: #212529;
+  box-shadow: none;
+}
+
+.projects-accordion .accordion-body {
+  padding: 1rem 0 0;
+}
+
 @media (hover: hover) and (pointer: fine) {
     .card:hover {
         box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.15);
