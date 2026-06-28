@@ -4,25 +4,33 @@ document.addEventListener("DOMContentLoaded", function () {
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
     tooltipTriggerList.forEach(el => new bootstrap.Tooltip(el));
     
-    fetch('/backend/article-counter.php')
-        .catch(err => {
-            console.warn('Fehler beim Aufruf von article-counter.php:', err);
-        });
+    const counterElement = document.getElementById('medium-counter');
+    if (counterElement) {
+        counterElement.textContent = '21';
+    }
 
-    fetch('/backend/data.json')
-        .then(response => {
-            if (!response.ok) throw new Error('Netzwerkfehler');
-            return response.json();
-        })
-        .then(data => {
-            const counterElement = document.getElementById('medium-counter');
-            if (counterElement && data['article-counter']) {
-                counterElement.textContent = data['article-counter'];
-            }
-        })
-        .catch(err => {
-            console.warn('Fehler beim Laden des Artikelzählers:', err);
-        });
+    // Dynamischer Artikelzähler über Medium RSS. Aktuell deaktiviert,
+    // weil die Artikel ebenfalls statisch aus medium-static.json kommen.
+    //
+    // fetch('/backend/article-counter.php')
+    //     .catch(err => {
+    //         console.warn('Fehler beim Aufruf von article-counter.php:', err);
+    //     });
+    //
+    // fetch('/backend/data.json')
+    //     .then(response => {
+    //         if (!response.ok) throw new Error('Netzwerkfehler');
+    //         return response.json();
+    //     })
+    //     .then(data => {
+    //         const counterElement = document.getElementById('medium-counter');
+    //         if (counterElement && data['article-counter']) {
+    //             counterElement.textContent = data['article-counter'];
+    //         }
+    //     })
+    //     .catch(err => {
+    //         console.warn('Fehler beim Laden des Artikelzählers:', err);
+    //     });
 
     const scrollIcon = document.getElementById("scroll-icon");
     const icon = scrollIcon.querySelector("i");
@@ -82,4 +90,3 @@ document.addEventListener("DOMContentLoaded", function () {
         icon.classList.toggle("fa-circle-up", atBottom);
     });
 });
-
