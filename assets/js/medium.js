@@ -47,7 +47,7 @@ async function fetchMediumPosts() {
             throw new Error('API returned invalid data structure');
         }
 
-        posts = data.items.slice(0, 6); // Nur die letzten 6 Artikel
+        posts = data.items.slice(0, 9); // Nur die letzten 6 Artikel
 
         // HTML generieren
         container.innerHTML = posts.map(post => {
