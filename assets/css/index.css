@@ -67,9 +67,39 @@ button:hover i {
    color: inherit;
 }
 
+.profile-image-frame {
+  position: relative;
+  display: inline-block;
+  width: min(50%, 200px);
+  aspect-ratio: 1;
+  padding: 4px;
+  border-radius: 50%;
+}
+
+.profile-image-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: conic-gradient(from 0deg, #212529, #dee2e6, #f8f9fa, #212529);
+  /* animation: profileBorderSpin 8s linear infinite; */
+}
+
 .profile-image {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   filter: contrast(110%);
 }
+
+/* @keyframes profileBorderSpin {
+  to {
+    transform: rotate(360deg);
+  }
+} */
 
 .container--individual {
     border: 1px solid #dee2e6;
@@ -97,7 +127,7 @@ button:hover i {
   background-color: #212529;
   border-radius: var(--bs-border-radius-sm);
   box-shadow: none;
-  transition: opacity 150ms ease-in-out;
+  transition: background-color 150ms ease-in-out;
 }
 
 .projects-accordion .accordion-button::before {
@@ -110,7 +140,7 @@ button:hover i {
   background-repeat: no-repeat;
   background-size: 0.75rem;
   filter: brightness(0) invert(1);
-  transition: var(--bs-accordion-btn-icon-transition);
+  transition: transform 150ms ease-in-out;
 }
 
 .projects-accordion .accordion-button:not(.collapsed)::before {
@@ -122,15 +152,24 @@ button:hover i {
   display: none;
 }
 
-.projects-accordion .accordion-button:hover {
-  opacity: 0.75;
-}
-
 .projects-accordion .accordion-button:not(.collapsed),
 .projects-accordion .accordion-button:focus {
   color: #fff;
   background-color: #212529;
   box-shadow: none;
+}
+
+.projects-accordion .accordion-button:hover,
+.projects-accordion .accordion-button:not(.collapsed):hover {
+  background-color: #343a40;
+}
+
+.projects-accordion .accordion-button:hover::before {
+  transform: scale(0.9);
+}
+
+.projects-accordion .accordion-button:not(.collapsed):hover::before {
+  transform: var(--bs-accordion-btn-icon-transform) scale(0.9);
 }
 
 .projects-accordion .accordion-body {
